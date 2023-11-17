@@ -239,6 +239,8 @@
 			dependencies = (
 			);
 			name = "Clave Watch App";
+			packageProductDependencies = (
+			);
 			productName = "Clave Watch App";
 			productReference = 3A2BCE7A2B07F6210052C7A5 /* Clave Watch App.app */;
 			productType = "com.apple.product-type.application";
@@ -269,6 +271,8 @@
 				Base,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
+			packageReferences = (
+			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -667,7 +671,8 @@
 				OTHER_CPLUSPLUSFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					" ",
+					"-Wl",
+					"-ld_classic",
 				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
@@ -730,7 +735,8 @@
 				OTHER_CPLUSPLUSFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					" ",
+					"-Wl",
+					"-ld_classic",
 				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
