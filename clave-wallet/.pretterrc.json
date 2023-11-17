@@ -1,0 +1,24 @@
+{
+  "singleQuote": true,
+  "trailingComma": "all",
+  "tabWidth": 4,
+  "printWidth": 80,
+  "importOrder": ["^@core/(.*)$", "^@server/(.*)$", "^@ui/(.*)$", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "importOrderParserPlugins": ["typescript", "decorators-legacy", "jsx"],
+  "overrides": [
+    {
+      "files": "*.json",
+      "options": {
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": "*.sol",
+      "options": {
+        "printWidth": 100
+      }
+    }
+  ]
+}

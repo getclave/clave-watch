@@ -1,20 +1,32 @@
+import { QueryClientProvider } from "react-query";
+import { RecoilRoot } from "recoil";
+import { queryClient } from "./api";
+import { useAuth } from "./store";
+import "react-native-gesture-handler";
+import { AuthorizedPages } from "./pages/AuthorizedPages";
+import { UnauthorizedPages } from "./pages/UnauthorizedPages";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { CDSThemeProvider } from "./packages";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="light" />
-    </View>
+    <QueryClientProvider client={queryClient}>
+      <CDSThemeProvider defaultTheme="dark">
+        <RecoilRoot>
+          <StatusBar style="light" />
+          <Main />
+        </RecoilRoot>
+      </CDSThemeProvider>
+    </QueryClientProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#000",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+const Main = () => {
+  const { isAuth } = useAuth();
+
+  if (!isAuth) {
+    return <UnauthorizedPages />;
+  }
+
+  return <AuthorizedPages />;
+};
