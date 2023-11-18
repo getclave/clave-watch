@@ -4,14 +4,13 @@ import { ComponentPropsWithoutRef, useEffect, useMemo, useState } from "react";
 
 interface Props
   extends Omit<ComponentPropsWithoutRef<"div">, "dangerouslySetInnerHTML"> {
-  size?: number;
+  size: number;
   address: string;
 }
 
 export const NounsAvatar = ({
-  size = 32,
+  size,
   address,
-  style,
   ...rest
 }: Props): $MixedElement => {
   const [svg, setSvg] = useState<string | null>(null);
@@ -26,13 +25,23 @@ export const NounsAvatar = ({
       return;
     }
     nounsContract.generateSVGImage(seed).then((res: string): void => {
-      setSvg(atob(res));
+      const svgString = atob(res);
+      setSvg(svgString);
     });
   }, [seed]);
 
+  useEffect(() => {
+    const styleEl = document.createElement("style");
+    styleEl.append(
+      `#clave-nouns-avatars svg { width: inherit; height: inherit; border-radius: inherit }`
+    );
+    document.body.prepend(styleEl);
+  }, []);
+
   return (
     <div
-      style={{ width: formatPx(size), height: formatPx(size), ...style }}
+      id="clave-nouns-avatars"
+      style={{ width: formatPx(size), height: formatPx(size) }}
       dangerouslySetInnerHTML={{ __html: svg }}
       {...rest}
     />

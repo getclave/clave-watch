@@ -68,3 +68,23 @@ export const getSeedForNounPart = (parsedAddress: string): Array<number> => {
 export const formatPx = (px: number): string => {
   return `${px}px`;
 };
+
+/**
+ *
+ * @param classes - The classes to be joined
+ * @returns
+ */
+export function clsnm(
+  ...classes: Array<string | boolean | null | undefined>
+): string {
+  const mainClassArr: Array<string> = [];
+  const clsArray = [...classes];
+
+  for (const cls of clsArray) {
+    if (typeof cls === "string" && cls.trim() !== "") {
+      mainClassArr.push(cls);
+    }
+  }
+
+  return mainClassArr.join(" ");
+}

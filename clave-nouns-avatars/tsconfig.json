@@ -3,7 +3,7 @@
     "experimentalDecorators": true,
     "target": "es2017",
     "module": "commonjs",
-    "lib": ["es2017", "es7", "es6"],
+    "lib": ["es2017", "es7", "es6", "DOM"],
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
