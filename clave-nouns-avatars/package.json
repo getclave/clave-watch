@@ -1,6 +1,6 @@
 {
   "name": "clave-nouns-avatars",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Nouns avatar library for React",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
