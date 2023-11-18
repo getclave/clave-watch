@@ -4,6 +4,8 @@
 
 This library helps you to use Nouns as React components in your code. There are always need for representing users unuiquely with their avatars, like Emojis in smartphones. Nouns provides a great alternative for web3 world to represent every user with different combination of Noun parts such as glasses, head, bodies, accessory and backgrounds.
 
+Built in [ETHGlobal Istanbul Hackathon](https://ethglobal.com/events/istanbul/prizes#nouns-dao) for Nouns DAO as Public Good.
+
 <img src="https://i.imgur.com/ackj7cK.png" width="400px">
 
 # Installation
