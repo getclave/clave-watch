@@ -6,7 +6,7 @@ import {
   View,
 } from "react-native";
 import { $MixedElement } from "../../types";
-import { CDSButton, CDSColors, CDSInput, CDSTypography } from "../../packages";
+import { CDSButton, CDSColors, CDSInput } from "../../packages";
 import { useMemo, useRef, useState } from "react";
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from "../../utils/dimensions";
 import { dashboardGradient, logo } from "../../assets";

@@ -24,7 +24,7 @@ prepare_react_native_project!
 #   }
 # }
 # ```
-pod 'DSF_QRCode', '~> 16.1.1'
+
 
 flipper_config = FlipperConfiguration.disabled
 if ENV['NO_FLIPPER'] == '1' then

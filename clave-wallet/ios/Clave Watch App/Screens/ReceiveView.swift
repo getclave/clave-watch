@@ -6,19 +6,6 @@
 //
 
 import SwiftUI
-import EFQRCode
-
-func buildQRCode() -> Void {
-  if let image = EFQRCode.generate(
-      for: "https://github.com/EFPrefix/EFQRCode",
-      watermark: UIImage(named: "WWF")?.cgImage
-  ) {
-      print("Create QRCode image success \(image)")
-  } else {
-      print("Create QRCode image failed!")
-  }
-  
-}
 
 struct ReceiveView: View {
     var body: some View {
