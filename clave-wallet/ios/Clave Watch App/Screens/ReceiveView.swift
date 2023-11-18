@@ -6,17 +6,18 @@
 //
 
 import SwiftUI
-import UIKit.UIImage
+import EFQRCode
 
-func getQRCodeDate(text: String) -> Data? {
-    guard let filter = CIFilter(name: "CIQRCodeGenerator") else { return nil }
-    let data = text.data(using: .ascii, allowLossyConversion: false)
-    filter.setValue(data, forKey: "inputMessage")
-    guard let ciimage = filter.outputImage else { return nil }
-    let transform = CGAffineTransform(scaleX: 10, y: 10)
-    let scaledCIImage = ciimage.transformed(by: transform)
-    let uiimage = UIKit.UIImage(cgImage: scaledCIImage)
-    return uiimage.pngData()!
+func buildQRCode() -> Void {
+  if let image = EFQRCode.generate(
+      for: "https://github.com/EFPrefix/EFQRCode",
+      watermark: UIImage(named: "WWF")?.cgImage
+  ) {
+      print("Create QRCode image success \(image)")
+  } else {
+      print("Create QRCode image failed!")
+  }
+  
 }
 
 struct ReceiveView: View {

@@ -17,6 +17,7 @@
 		3A2BCE872B07F6220052C7A5 /* Clave Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3A2BCE7A2B07F6210052C7A5 /* Clave Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3A2BCE8E2B0856730052C7A5 /* SendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2BCE8D2B0856730052C7A5 /* SendView.swift */; };
 		3A2BCE902B0857360052C7A5 /* ReceiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2BCE8F2B0857360052C7A5 /* ReceiveView.swift */; };
+		3A2BCE962B08C0D40052C7A5 /* EFQRCode in Frameworks */ = {isa = PBXBuildFile; productRef = 3A2BCE952B08C0D40052C7A5 /* EFQRCode */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
 		86342A9DEE2D44609612FDA4 /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = A352D7E4791A404DA6483734 /* noop-file.swift */; };
 		96905EF65AED1B983A6B3ABC /* libPods-ClaveWallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-ClaveWallet.a */; };
@@ -79,6 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96905EF65AED1B983A6B3ABC /* libPods-ClaveWallet.a in Frameworks */,
+				3A2BCE962B08C0D40052C7A5 /* EFQRCode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +238,9 @@
 				3A2BCE862B07F6220052C7A5 /* PBXTargetDependency */,
 			);
 			name = ClaveWallet;
+			packageProductDependencies = (
+				3A2BCE952B08C0D40052C7A5 /* EFQRCode */,
+			);
 			productName = ClaveWallet;
 			productReference = 13B07F961A680F5B00A75B9A /* ClaveWallet.app */;
 			productType = "com.apple.product-type.application";
@@ -284,6 +289,7 @@
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			packageReferences = (
+				3A2BCE942B08C0D40052C7A5 /* XCRemoteSwiftPackageReference "EFQRCode" */,
 			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
@@ -783,6 +789,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3A2BCE942B08C0D40052C7A5 /* XCRemoteSwiftPackageReference "EFQRCode" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/EFPrefix/EFQRCode";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3A2BCE952B08C0D40052C7A5 /* EFQRCode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A2BCE942B08C0D40052C7A5 /* XCRemoteSwiftPackageReference "EFQRCode" */;
+			productName = EFQRCode;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
 }
