@@ -10,6 +10,9 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		3A1E23CD2B092B9A00A0D140 /* DeployView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E23CC2B092B9900A0D140 /* DeployView.swift */; };
+		3A1E23CF2B092FE300A0D140 /* TxSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E23CE2B092FE300A0D140 /* TxSuccessView.swift */; };
+		3A1E23D22B09366300A0D140 /* SwiftUI Apple Watch Decimal Pad in Frameworks */ = {isa = PBXBuildFile; productRef = 3A1E23D12B09366300A0D140 /* SwiftUI Apple Watch Decimal Pad */; };
 		3A2BCE7D2B07F6220052C7A5 /* ClaveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2BCE7C2B07F6220052C7A5 /* ClaveApp.swift */; };
 		3A2BCE7F2B07F6220052C7A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2BCE7E2B07F6220052C7A5 /* ContentView.swift */; };
 		3A2BCE812B07F6220052C7A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A2BCE802B07F6220052C7A5 /* Assets.xcassets */; };
@@ -57,6 +60,8 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ClaveWallet/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ClaveWallet/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ClaveWallet/main.m; sourceTree = "<group>"; };
+		3A1E23CC2B092B9900A0D140 /* DeployView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployView.swift; sourceTree = "<group>"; };
+		3A1E23CE2B092FE300A0D140 /* TxSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TxSuccessView.swift; sourceTree = "<group>"; };
 		3A2BCE7A2B07F6210052C7A5 /* Clave Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clave Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A2BCE7C2B07F6220052C7A5 /* ClaveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaveApp.swift; sourceTree = "<group>"; };
 		3A2BCE7E2B07F6220052C7A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,6 +87,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96905EF65AED1B983A6B3ABC /* libPods-ClaveWallet.a in Frameworks */,
+				3A1E23D22B09366300A0D140 /* SwiftUI Apple Watch Decimal Pad in Frameworks */,
 				3A2BCE962B08C0D40052C7A5 /* EFQRCode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,6 +153,8 @@
 			children = (
 				3A2BCE8D2B0856730052C7A5 /* SendView.swift */,
 				3A2BCE8F2B0857360052C7A5 /* ReceiveView.swift */,
+				3A1E23CC2B092B9900A0D140 /* DeployView.swift */,
+				3A1E23CE2B092FE300A0D140 /* TxSuccessView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -243,6 +251,7 @@
 			name = ClaveWallet;
 			packageProductDependencies = (
 				3A2BCE952B08C0D40052C7A5 /* EFQRCode */,
+				3A1E23D12B09366300A0D140 /* SwiftUI Apple Watch Decimal Pad */,
 			);
 			productName = ClaveWallet;
 			productReference = 13B07F961A680F5B00A75B9A /* ClaveWallet.app */;
@@ -293,6 +302,7 @@
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			packageReferences = (
 				3A2BCE942B08C0D40052C7A5 /* XCRemoteSwiftPackageReference "EFQRCode" */,
+				3A1E23D02B09366300A0D140 /* XCRemoteSwiftPackageReference "SwiftUI-Apple-Watch-Decimal-Pad" */,
 			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
@@ -458,9 +468,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A2BCE7F2B07F6220052C7A5 /* ContentView.swift in Sources */,
+				3A1E23CD2B092B9A00A0D140 /* DeployView.swift in Sources */,
 				3A2BCE982B08D03F0052C7A5 /* PhoneConnector.swift in Sources */,
 				3A2BCE7D2B07F6220052C7A5 /* ClaveApp.swift in Sources */,
 				3A2BCE902B0857360052C7A5 /* ReceiveView.swift in Sources */,
+				3A1E23CF2B092FE300A0D140 /* TxSuccessView.swift in Sources */,
 				3A2BCE8E2B0856730052C7A5 /* SendView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -801,6 +813,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3A1E23D02B09366300A0D140 /* XCRemoteSwiftPackageReference "SwiftUI-Apple-Watch-Decimal-Pad" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ApplebaumIan/SwiftUI-Apple-Watch-Decimal-Pad.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		3A2BCE942B08C0D40052C7A5 /* XCRemoteSwiftPackageReference "EFQRCode" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/EFPrefix/EFQRCode";
@@ -812,6 +832,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3A1E23D12B09366300A0D140 /* SwiftUI Apple Watch Decimal Pad */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A1E23D02B09366300A0D140 /* XCRemoteSwiftPackageReference "SwiftUI-Apple-Watch-Decimal-Pad" */;
+			productName = "SwiftUI Apple Watch Decimal Pad";
+		};
 		3A2BCE952B08C0D40052C7A5 /* EFQRCode */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3A2BCE942B08C0D40052C7A5 /* XCRemoteSwiftPackageReference "EFQRCode" */;

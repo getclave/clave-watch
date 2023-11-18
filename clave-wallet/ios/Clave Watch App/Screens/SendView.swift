@@ -7,14 +7,30 @@
 
 import SwiftUI
 
+
 struct SendView: View {
     @State private var username: String = ""
+    @State private var amount: String = "0.0"
   
     var body: some View {
       VStack {
-        TextField("Send", text: $username)
+        TextField("Username / ENS", text: $username)
+        
+        TextField("Amount", text: $amount).font(.system(size: 24))
+        
+        NavigationLink(destination: TxSuccessView()) {
+            Text("Send")
+                .padding()
+                .frame(maxWidth: .infinity)
+                .frame(height: 50) // Adjusted height
+                .background(Color.primaryTeal)
+                .foregroundColor(.white)
+                .cornerRadius(30)
+        }
+        .buttonStyle(PlainButtonStyle())
       }
     }
+
 }
 
 struct SendView_Previews: PreviewProvider {

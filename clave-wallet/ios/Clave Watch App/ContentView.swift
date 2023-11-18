@@ -15,32 +15,9 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 if authenticated {
-            
-                    Image("Logo")
-                         .resizable()
-                         .scaledToFit()
-                         .frame(width: 100, height: 100)
-                         .padding(.bottom)
-                  
-                    NavigationLink(destination: SendReceiveView()) {
-                        Text("Continue")
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 48) // Adjusted height
-                            .background(Color.secondaryTeal)
-                            .foregroundColor(.white)
-                            .cornerRadius(30)
-                    }
-                    .buttonStyle(PlainButtonStyle())
+                  SendReceiveView()
                 } else {
-                    Button("Authenticate Device") {
-                        authenticateDevice()
-                    }
-                    .padding()
-                    .frame(height: 48)
-                    .background(Color.primaryTeal)
-                    .foregroundColor(.white)
-                    .cornerRadius(30)
+                  DeployView(authenticate: authenticateDevice)
                 }
             }
             .background(Color.black)
@@ -63,6 +40,13 @@ struct SendReceiveView: View {
     var body: some View {
         NavigationView {
             VStack {
+                
+                Image("Avatar")
+                   .resizable()
+                   .scaledToFit()
+                   .frame(width: 64, height: 64)
+                   .padding(.bottom)
+              
                 NavigationLink(destination: SendView()) {
                     Text("Send")
                         .padding()

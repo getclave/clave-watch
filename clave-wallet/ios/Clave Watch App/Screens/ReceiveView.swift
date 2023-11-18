@@ -11,7 +11,15 @@ struct ReceiveView: View {
      
   
     var body: some View {
-      Text("Receive View Is Here")
+      VStack {
+        Image("QR")
+           .resizable()
+           .scaledToFit()
+           .frame(maxWidth: .infinity, maxHeight: .infinity)
+           .padding(.bottom)
+        Text("Scan QR Code to receive")
+      }
+
     }
 }
 
