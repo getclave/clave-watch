@@ -14,11 +14,18 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 if authenticated {
+            
+                    Image("Logo")
+                         .resizable()
+                         .scaledToFit()
+                         .frame(width: 100, height: 100)
+                         .padding(.bottom)
+                  
                     NavigationLink(destination: SendReceiveView()) {
                         Text("Continue")
                             .padding()
                             .frame(maxWidth: .infinity)
-                            .frame(height: 50) // Adjusted height
+                            .frame(height: 48) // Adjusted height
                             .background(Color.secondaryTeal)
                             .foregroundColor(.white)
                             .cornerRadius(30)
@@ -29,7 +36,7 @@ struct ContentView: View {
                         authenticateDevice()
                     }
                     .padding()
-                    .frame(maxWidth: .infinity)
+                    .frame(height: 48)
                     .background(Color.primaryTeal)
                     .foregroundColor(.white)
                     .cornerRadius(30)
@@ -49,10 +56,13 @@ struct ContentView: View {
 }
 
 struct SendReceiveView: View {
+    @State private var userInput: String = ""
+  
+  
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink(destination: Text("Send functionality goes here")) {
+                NavigationLink(destination: SendView()) {
                     Text("Send")
                         .padding()
                         .frame(maxWidth: .infinity)
@@ -63,7 +73,7 @@ struct SendReceiveView: View {
                 }
                 .buttonStyle(PlainButtonStyle())
 
-                NavigationLink(destination: Text("Receive functionality goes here")) {
+                NavigationLink(destination: ReceiveView()) {
                     Text("Receive")
                         .padding()
                         .frame(maxWidth: .infinity)

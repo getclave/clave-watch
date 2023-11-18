@@ -66,11 +66,7 @@ export default function CDSButton(props: Props): JSX.Element {
 
   const styleOverride = useMemo(() => {
     const disabledStyle =
-      color === "primary"
-        ? styles.disabledPrimary
-        : color === "secondary"
-          ? styles.disabledSecondary
-          : styles.disabled;
+      color === "secondary" ? styles.disabledSecondary : styles.disabled;
 
     return filterNulls<StyleOverrideItem>([
       styles.base,
@@ -216,7 +212,7 @@ const styles = StyleSheet.create({
     marginLeft: 8,
   },
   textprimary: {
-    color: CDSColors.dark,
+    color: CDSColors.light,
     fontFamily: DMSans.regular,
   },
   textsecondary: {
@@ -240,10 +236,7 @@ const styles = StyleSheet.create({
     color: "rgba(249, 65, 65, 1)",
   },
   textprimarydisabled: {
-    color: "rgba(255, 255, 255, 0.72)",
-  },
-  disabledPrimary: {
-    backgroundColor: "rgba(0, 206, 209, 0.24)",
+    color: CDSColors.light,
   },
   disabledSecondary: {
     opacity: 0.5,

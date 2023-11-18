@@ -19,7 +19,7 @@ import CDSInputIcon from "./CDSInputIcon.react";
 import { filterNulls } from "../../../../../utils/filterNulls";
 
 export type CDSInputSize = "large" | "medium";
-export type CDSInputColor = "dark";
+export type CDSInputColor = "dark" | "light";
 export type CDSInputWidth = "fullwidth" | "string" | number;
 export type CDSInputIconType = (() => string) | $MixedElement;
 export type CDSInputFeedback = {
@@ -127,6 +127,8 @@ export default function CDSInput(props: Props): JSX.Element {
   const placeholderColor = useMemo(() => {
     if (color === "dark") {
       return CDSColors.subtext;
+    } else if (color === "light") {
+      return CDSColors.subtext;
     }
   }, [color]);
 
@@ -227,6 +229,10 @@ const dynamicStyles = (theme: CDSTheme) =>
       borderStyle: "solid",
     },
     dark: {
+      backgroundColor: theme.input.bg,
+      color: theme.input.color,
+    },
+    light: {
       backgroundColor: theme.input.bg,
       color: theme.input.color,
     },

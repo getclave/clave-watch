@@ -3,7 +3,7 @@ import { $MixedElement } from "../../types";
 import { CDSButton, CDSColors, CDSInput, CDSTypography } from "../../packages";
 import { useMemo, useRef, useState } from "react";
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from "../../utils/dimensions";
-import { dashboardGradient } from "../../assets";
+import { dashboardGradient, logo } from "../../assets";
 import { useCustomAnimation } from "../../hooks/useCustomAnimation";
 
 export const Landing = (): $MixedElement => {
@@ -29,12 +29,22 @@ export const Landing = (): $MixedElement => {
           <Image resizeMode="cover" source={dashboardGradient} />
         </Animated.View>
         <View style={styles.wrapper}>
+          <Image
+            style={styles.image}
+            width={SCREEN_WIDTH - 120}
+            source={logo}
+          />
           <CDSInput
+            color="light"
             value={username}
             onChangeText={setUsername}
             label="Username"
           />
-          <CDSButton disabled={isButtonDisabled} margin={["mt-4"]}>
+          <CDSButton
+            color="primary"
+            disabled={isButtonDisabled}
+            margin={["mt-4"]}
+          >
             Create Account
           </CDSButton>
         </View>
@@ -65,5 +75,8 @@ const styles = StyleSheet.create({
     marginTop: "auto",
     marginBottom: 72,
     zIndex: 1,
+  },
+  image: {
+    marginBottom: 32,
   },
 });

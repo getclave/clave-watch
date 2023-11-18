@@ -15,6 +15,8 @@
 		3A2BCE812B07F6220052C7A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A2BCE802B07F6220052C7A5 /* Assets.xcassets */; };
 		3A2BCE842B07F6220052C7A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A2BCE832B07F6220052C7A5 /* Preview Assets.xcassets */; };
 		3A2BCE872B07F6220052C7A5 /* Clave Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3A2BCE7A2B07F6210052C7A5 /* Clave Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3A2BCE8E2B0856730052C7A5 /* SendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2BCE8D2B0856730052C7A5 /* SendView.swift */; };
+		3A2BCE902B0857360052C7A5 /* ReceiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2BCE8F2B0857360052C7A5 /* ReceiveView.swift */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
 		86342A9DEE2D44609612FDA4 /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = A352D7E4791A404DA6483734 /* noop-file.swift */; };
 		96905EF65AED1B983A6B3ABC /* libPods-ClaveWallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-ClaveWallet.a */; };
@@ -58,6 +60,8 @@
 		3A2BCE7E2B07F6220052C7A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3A2BCE802B07F6220052C7A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A2BCE832B07F6220052C7A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3A2BCE8D2B0856730052C7A5 /* SendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendView.swift; sourceTree = "<group>"; };
+		3A2BCE8F2B0857360052C7A5 /* ReceiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveView.swift; sourceTree = "<group>"; };
 		58EEBF8E8E6FB1BC6CAF49B5 /* libPods-ClaveWallet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ClaveWallet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C2E3173556A471DD304B334 /* Pods-ClaveWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClaveWallet.debug.xcconfig"; path = "Target Support Files/Pods-ClaveWallet/Pods-ClaveWallet.debug.xcconfig"; sourceTree = "<group>"; };
 		7A4D352CD337FB3A3BF06240 /* Pods-ClaveWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClaveWallet.release.xcconfig"; path = "Target Support Files/Pods-ClaveWallet/Pods-ClaveWallet.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 		3A2BCE7B2B07F6220052C7A5 /* Clave Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				3A2BCE8C2B08564C0052C7A5 /* Screens */,
 				3A2BCE7C2B07F6220052C7A5 /* ClaveApp.swift */,
 				3A2BCE7E2B07F6220052C7A5 /* ContentView.swift */,
 				3A2BCE802B07F6220052C7A5 /* Assets.xcassets */,
@@ -130,6 +135,15 @@
 				3A2BCE832B07F6220052C7A5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3A2BCE8C2B08564C0052C7A5 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				3A2BCE8D2B0856730052C7A5 /* SendView.swift */,
+				3A2BCE8F2B0857360052C7A5 /* ReceiveView.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -239,8 +253,6 @@
 			dependencies = (
 			);
 			name = "Clave Watch App";
-			packageProductDependencies = (
-			);
 			productName = "Clave Watch App";
 			productReference = 3A2BCE7A2B07F6210052C7A5 /* Clave Watch App.app */;
 			productType = "com.apple.product-type.application";
@@ -271,8 +283,6 @@
 				Base,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
-			packageReferences = (
-			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -438,6 +448,8 @@
 			files = (
 				3A2BCE7F2B07F6220052C7A5 /* ContentView.swift in Sources */,
 				3A2BCE7D2B07F6220052C7A5 /* ClaveApp.swift in Sources */,
+				3A2BCE902B0857360052C7A5 /* ReceiveView.swift in Sources */,
+				3A2BCE8E2B0856730052C7A5 /* SendView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,11 +681,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-Wl",
-					"-ld_classic",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 			};
@@ -733,11 +741,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-Wl",
-					"-ld_classic",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

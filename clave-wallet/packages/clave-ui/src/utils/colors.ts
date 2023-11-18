@@ -1,5 +1,5 @@
 export const CDSColors = {
-  primary: "rgba(0, 206, 209, 1)",
+  primary: "#113a6a",
   dark: "rgba(0, 0, 0, 1)",
   text: "rgba(255, 255, 255, 1)",
   light: "rgba(255, 255, 255, 1)",

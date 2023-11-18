@@ -11,7 +11,7 @@ import { CDSThemeProvider } from "./packages";
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <CDSThemeProvider defaultTheme="dark">
+      <CDSThemeProvider defaultTheme="light">
         <RecoilRoot>
           <StatusBar style="light" />
           <Main />
