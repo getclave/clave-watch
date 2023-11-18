@@ -1,4 +1,10 @@
-import { Animated, Image, StyleSheet, View } from "react-native";
+import {
+  Animated,
+  Image,
+  KeyboardAvoidingView,
+  StyleSheet,
+  View,
+} from "react-native";
 import { $MixedElement } from "../../types";
 import { CDSButton, CDSColors, CDSInput, CDSTypography } from "../../packages";
 import { useMemo, useRef, useState } from "react";
@@ -28,7 +34,13 @@ export const Landing = (): $MixedElement => {
         >
           <Image resizeMode="cover" source={dashboardGradient} />
         </Animated.View>
-        <View style={styles.wrapper}>
+
+        <KeyboardAvoidingView
+          behavior="padding"
+          enabled={true}
+          keyboardVerticalOffset={24}
+          style={styles.wrapper}
+        >
           <Image
             style={styles.image}
             width={SCREEN_WIDTH - 120}
@@ -47,7 +59,7 @@ export const Landing = (): $MixedElement => {
           >
             Create Account
           </CDSButton>
-        </View>
+        </KeyboardAvoidingView>
       </View>
     </>
   );
