@@ -13,7 +13,7 @@ export const NounsAvatar = ({ size, address }: Props): $MixedElement => {
 
   useEffect(() => {
     nounsContract
-      .generateSVGImage(BigNumber.from(0))
+      .generateSVGImage([1, 10, 3, 9, 1])
       .then((res: string): void => {
         setSvg(atob(res));
       });

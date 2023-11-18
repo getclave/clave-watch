@@ -7,7 +7,9 @@ const react_1 = require("react");
 const NounsAvatar = ({ size, address }) => {
     const [svg, setSvg] = (0, react_1.useState)(null);
     (0, react_1.useEffect)(() => {
-        utils_1.nounsContract.generateSVGImage(0).then((res) => {
+        utils_1.nounsContract
+            .generateSVGImage([1, 10, 3, 9, 1])
+            .then((res) => {
             setSvg(atob(res));
         });
     }, []);
