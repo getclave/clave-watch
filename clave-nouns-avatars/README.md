@@ -6,6 +6,10 @@ This library helps you to use Nouns as React components in your code. There are 
 
 Built in [ETHGlobal Istanbul Hackathon](https://ethglobal.com/events/istanbul/prizes#nouns-dao) for Nouns DAO as Public Good.
 
+# Example
+
+[https://codepen.io/Farhad-Asgarov/pen/YzBezJG](https://codepen.io/Farhad-Asgarov/pen/YzBezJG).
+
 <img src="https://i.imgur.com/ackj7cK.png" width="400px">
 
 # Installation
