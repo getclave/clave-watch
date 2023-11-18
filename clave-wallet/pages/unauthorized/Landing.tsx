@@ -6,8 +6,8 @@ import {
   View,
 } from "react-native";
 import { $MixedElement } from "../../types";
-import { CDSButton, CDSColors, CDSInput } from "../../packages";
-import { useMemo, useRef, useState } from "react";
+import { CDSColors } from "../../packages";
+import { useRef, useState } from "react";
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from "../../utils/dimensions";
 import { dashboardGradient, logo } from "../../assets";
 import { useCustomAnimation } from "../../hooks/useCustomAnimation";
@@ -16,10 +16,6 @@ export const Landing = (): $MixedElement => {
   const translateX = useRef(new Animated.Value(0)).current;
   useCustomAnimation(translateX);
   const [username, setUsername] = useState("");
-
-  const isButtonDisabled = useMemo(() => {
-    return username.trim().length < 3;
-  }, [username]);
 
   return (
     <>
@@ -46,7 +42,7 @@ export const Landing = (): $MixedElement => {
             width={SCREEN_WIDTH - 120}
             source={logo}
           />
-          <CDSInput
+          {/* <CDSInput
             color="light"
             value={username}
             onChangeText={setUsername}
@@ -58,7 +54,7 @@ export const Landing = (): $MixedElement => {
             margin={["mt-4"]}
           >
             Create Account
-          </CDSButton>
+          </CDSButton> */}
         </KeyboardAvoidingView>
       </View>
     </>
@@ -85,8 +81,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 16,
     marginTop: "auto",
-    marginBottom: 72,
     zIndex: 1,
+    height: SCREEN_HEIGHT,
   },
   image: {
     marginBottom: 32,

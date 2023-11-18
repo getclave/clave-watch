@@ -9,6 +9,7 @@ extension Color {
 
 struct ContentView: View {
     @State private var authenticated: Bool = false
+    var phoneConnector = PhoneConnector()
 
     var body: some View {
         NavigationView {
