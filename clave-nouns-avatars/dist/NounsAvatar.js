@@ -33,7 +33,7 @@ const NounsAvatar = (_a) => {
     }, [seed]);
     (0, react_1.useEffect)(() => {
         const styleEl = document.createElement("style");
-        styleEl.append(`#clave-nouns-avatars svg { width: inherit; height: inherit; }`);
+        styleEl.append(`#clave-nouns-avatars svg { width: inherit; height: inherit; border-radius: inherit }`);
         document.body.prepend(styleEl);
     }, []);
     return ((0, jsx_runtime_1.jsx)("div", Object.assign({ id: "clave-nouns-avatars", style: { width: (0, utils_1.formatPx)(size), height: (0, utils_1.formatPx)(size) }, dangerouslySetInnerHTML: { __html: svg } }, rest)));
