@@ -10,6 +10,9 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		3A23B8732B098DB7005E36BD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3A23B8722B098DB7005E36BD /* Alamofire */; };
+		3A23B8762B09913C005E36BD /* TxSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A23B8742B09913C005E36BD /* TxSuccessView.swift */; };
+		3A23B8772B09913C005E36BD /* DeployView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A23B8752B09913C005E36BD /* DeployView.swift */; };
 		3A2BCE7D2B07F6220052C7A5 /* ClaveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2BCE7C2B07F6220052C7A5 /* ClaveApp.swift */; };
 		3A2BCE7F2B07F6220052C7A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2BCE7E2B07F6220052C7A5 /* ContentView.swift */; };
 		3A2BCE812B07F6220052C7A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A2BCE802B07F6220052C7A5 /* Assets.xcassets */; };
@@ -17,13 +20,17 @@
 		3A2BCE872B07F6220052C7A5 /* Clave Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3A2BCE7A2B07F6210052C7A5 /* Clave Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3A2BCE8E2B0856730052C7A5 /* SendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2BCE8D2B0856730052C7A5 /* SendView.swift */; };
 		3A2BCE902B0857360052C7A5 /* ReceiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2BCE8F2B0857360052C7A5 /* ReceiveView.swift */; };
-		3A2BCE962B08C0D40052C7A5 /* EFQRCode in Frameworks */ = {isa = PBXBuildFile; productRef = 3A2BCE952B08C0D40052C7A5 /* EFQRCode */; };
 		3A2BCE982B08D03F0052C7A5 /* PhoneConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2BCE972B08D03F0052C7A5 /* PhoneConnector.swift */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
 		86342A9DEE2D44609612FDA4 /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = A352D7E4791A404DA6483734 /* noop-file.swift */; };
 		96905EF65AED1B983A6B3ABC /* libPods-ClaveWallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-ClaveWallet.a */; };
 		B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
+		D523F6252B095CAA001548A0 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D523F6242B095CAA001548A0 /* Wallet.swift */; };
+		D523F6272B095D13001548A0 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D523F6262B095D13001548A0 /* Errors.swift */; };
+		D523F62C2B095DA2001548A0 /* PasswordStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D523F62B2B095DA2001548A0 /* PasswordStore.swift */; };
+		D523F62E2B095DB9001548A0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D523F62D2B095DB9001548A0 /* Extensions.swift */; };
+		D523F6302B095DFD001548A0 /* SecureEnclaveKeyPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = D523F62F2B095DFD001548A0 /* SecureEnclaveKeyPair.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +64,8 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ClaveWallet/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ClaveWallet/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ClaveWallet/main.m; sourceTree = "<group>"; };
+		3A23B8742B09913C005E36BD /* TxSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TxSuccessView.swift; sourceTree = "<group>"; };
+		3A23B8752B09913C005E36BD /* DeployView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeployView.swift; sourceTree = "<group>"; };
 		3A2BCE7A2B07F6210052C7A5 /* Clave Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clave Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A2BCE7C2B07F6220052C7A5 /* ClaveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaveApp.swift; sourceTree = "<group>"; };
 		3A2BCE7E2B07F6220052C7A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +81,11 @@
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = ClaveWallet/SplashScreen.storyboard; sourceTree = "<group>"; };
 		BA88F96AB0BA4B8A80157477 /* ClaveWallet-Bridging-Header.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "ClaveWallet-Bridging-Header.h"; path = "ClaveWallet/ClaveWallet-Bridging-Header.h"; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
+		D523F6242B095CAA001548A0 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		D523F6262B095D13001548A0 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		D523F62B2B095DA2001548A0 /* PasswordStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStore.swift; sourceTree = "<group>"; };
+		D523F62D2B095DB9001548A0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D523F62F2B095DFD001548A0 /* SecureEnclaveKeyPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureEnclaveKeyPair.swift; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-ClaveWallet/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,7 +96,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				96905EF65AED1B983A6B3ABC /* libPods-ClaveWallet.a in Frameworks */,
-				3A2BCE962B08C0D40052C7A5 /* EFQRCode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A23B8732B098DB7005E36BD /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,9 +141,14 @@
 				3A2BCE8C2B08564C0052C7A5 /* Screens */,
 				3A2BCE7C2B07F6220052C7A5 /* ClaveApp.swift */,
 				3A2BCE7E2B07F6220052C7A5 /* ContentView.swift */,
+				D523F6242B095CAA001548A0 /* Wallet.swift */,
+				D523F6262B095D13001548A0 /* Errors.swift */,
 				3A2BCE802B07F6220052C7A5 /* Assets.xcassets */,
 				3A2BCE822B07F6220052C7A5 /* Preview Content */,
 				3A2BCE972B08D03F0052C7A5 /* PhoneConnector.swift */,
+				D523F62B2B095DA2001548A0 /* PasswordStore.swift */,
+				D523F62D2B095DB9001548A0 /* Extensions.swift */,
+				D523F62F2B095DFD001548A0 /* SecureEnclaveKeyPair.swift */,
 			);
 			path = "Clave Watch App";
 			sourceTree = "<group>";
@@ -145,6 +164,8 @@
 		3A2BCE8C2B08564C0052C7A5 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				3A23B8752B09913C005E36BD /* DeployView.swift */,
+				3A23B8742B09913C005E36BD /* TxSuccessView.swift */,
 				3A2BCE8D2B0856730052C7A5 /* SendView.swift */,
 				3A2BCE8F2B0857360052C7A5 /* ReceiveView.swift */,
 			);
@@ -241,9 +262,6 @@
 				3A2BCE862B07F6220052C7A5 /* PBXTargetDependency */,
 			);
 			name = ClaveWallet;
-			packageProductDependencies = (
-				3A2BCE952B08C0D40052C7A5 /* EFQRCode */,
-			);
 			productName = ClaveWallet;
 			productReference = 13B07F961A680F5B00A75B9A /* ClaveWallet.app */;
 			productType = "com.apple.product-type.application";
@@ -261,6 +279,9 @@
 			dependencies = (
 			);
 			name = "Clave Watch App";
+			packageProductDependencies = (
+				3A23B8722B098DB7005E36BD /* Alamofire */,
+			);
 			productName = "Clave Watch App";
 			productReference = 3A2BCE7A2B07F6210052C7A5 /* Clave Watch App.app */;
 			productType = "com.apple.product-type.application";
@@ -292,7 +313,7 @@
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			packageReferences = (
-				3A2BCE942B08C0D40052C7A5 /* XCRemoteSwiftPackageReference "EFQRCode" */,
+				3A23B8712B098DB7005E36BD /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
@@ -457,11 +478,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D523F6252B095CAA001548A0 /* Wallet.swift in Sources */,
+				D523F62E2B095DB9001548A0 /* Extensions.swift in Sources */,
 				3A2BCE7F2B07F6220052C7A5 /* ContentView.swift in Sources */,
 				3A2BCE982B08D03F0052C7A5 /* PhoneConnector.swift in Sources */,
 				3A2BCE7D2B07F6220052C7A5 /* ClaveApp.swift in Sources */,
 				3A2BCE902B0857360052C7A5 /* ReceiveView.swift in Sources */,
+				3A23B8762B09913C005E36BD /* TxSuccessView.swift in Sources */,
+				3A23B8772B09913C005E36BD /* DeployView.swift in Sources */,
 				3A2BCE8E2B0856730052C7A5 /* SendView.swift in Sources */,
+				D523F6302B095DFD001548A0 /* SecureEnclaveKeyPair.swift in Sources */,
+				D523F62C2B095DA2001548A0 /* PasswordStore.swift in Sources */,
+				D523F6272B095D13001548A0 /* Errors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,7 +510,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ClaveWallet/ClaveWallet.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
@@ -522,7 +550,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ClaveWallet/ClaveWallet.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
@@ -801,21 +829,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3A2BCE942B08C0D40052C7A5 /* XCRemoteSwiftPackageReference "EFQRCode" */ = {
+		3A23B8712B098DB7005E36BD /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/EFPrefix/EFQRCode";
+			repositoryURL = "https://github.com/Alamofire/Alamofire/";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
+				minimumVersion = 5.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3A2BCE952B08C0D40052C7A5 /* EFQRCode */ = {
+		3A23B8722B098DB7005E36BD /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3A2BCE942B08C0D40052C7A5 /* XCRemoteSwiftPackageReference "EFQRCode" */;
-			productName = EFQRCode;
+			package = 3A23B8712B098DB7005E36BD /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

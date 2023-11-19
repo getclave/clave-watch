@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct Clave_Watch_AppApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  @StateObject var wallet = Wallet()
+  
+  var body: some Scene {
+    WindowGroup {
+      ContentView().environmentObject(wallet)
     }
+  }
 }
