@@ -10,7 +10,7 @@ import SwiftUI
 struct DeployView: View {
     @State private var username: String = ""
     // Declare a property to hold the function
-    var authenticate: () -> Void
+    var authenticate: (_ username: String) -> Void
   
     var body: some View {
       VStack {
@@ -25,7 +25,7 @@ struct DeployView: View {
         Spacer(minLength: 12)
         
         Button("Deploy Account") {
-            authenticate()
+          authenticate(username)
         }
         .padding()
         .frame(height: 48)
@@ -33,13 +33,5 @@ struct DeployView: View {
         .foregroundColor(.white)
         .cornerRadius(30)
       }
-    }
-}
-
-struct DeployView_Previews: PreviewProvider {
-    static var previews: some View {
-      DeployView(authenticate: {
-        print("Autenticate")
-      })
     }
 }

@@ -12,7 +12,6 @@ import WatchConnectivity
 final class PhoneConnector: NSObject {
   var session: WCSession
   
-  
   init (session: WCSession = .default) {
     self.session = session
     super.init ()
