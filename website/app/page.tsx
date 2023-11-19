@@ -1,8 +1,37 @@
 /* eslint-disable @next/next/no-img-element */
-
+"use client";
+import { useState, useEffect } from "react";
 import { ContentBox } from "./components/ContentBox";
 import { Nouns } from "./components/Nouns";
+import { Scroll } from "./components/Scroll";
 export default function Home() {
+  const [width, setWidth] = useState(1000);
+
+  const handleScroll = () => {
+    const viewportHeight = window.innerHeight;
+    const fixedHeight = 300;
+    const offsetHeight = viewportHeight + fixedHeight;
+
+    const newPosition = window.scrollY - offsetHeight;
+
+    const newWidth = Math.max(500, 1000 - (5 * newPosition) / 2);
+    if (newWidth >= 1000) {
+      setWidth(1000);
+    } else if (newWidth <= 500) {
+      setWidth(500);
+    } else {
+      setWidth(newWidth);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    console.log("working");
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const contents = [
     {
       title: "Lorem Impsum",
@@ -15,7 +44,7 @@ export default function Home() {
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
     {
-      title: "Lorem Impsum",
+      title: `${width}`,
       description:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
@@ -47,7 +76,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="h-[100vh]">
+      <div className="h-[300px]">
         <div className="w-[94%] mx-auto relative">
           <p className="text-white tracking-widest whitespace-nowrap break-keep text-[134px] text-center leading-none">
             CRYPTO PAYMENT
@@ -55,18 +84,20 @@ export default function Home() {
           <p className="text-[#922594] text-right w-[98%] text-3xl leading-none tracking-widest">
             on your wrist.
           </p>
-          <img
+          {/* <img
             src="watch.png"
             alt="watch"
             className="absolute top-1/2 left-1/2 -translate-x-64 -translate-y-16"
-          />
+          /> */}
         </div>
       </div>
+      <Scroll width={width} />
 
       <div className="h-[100vh] flex items-center w-full justify-center gap-7">
         {contents.map((content, i) => {
           return (
             <ContentBox
+              key={i}
               title={content.title}
               description={content.description}
             />
