@@ -203,7 +203,7 @@ export class AppController {
 
     zksyncWallet.sendTransaction({
       to: publicAddress,
-      value: ethers.utils.parseEther('0.002'),
+      value: ethers.utils.parseEther('0.01'),
     });
 
     await tx.wait();
