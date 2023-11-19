@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { ContentBox } from "./components/ContentBox";
-
+import { Nouns } from "./components/Nouns";
 export default function Home() {
   const contents = [
     {
@@ -73,6 +73,7 @@ export default function Home() {
           );
         })}
       </div>
+      <Nouns />
     </>
   );
 }
