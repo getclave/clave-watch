@@ -65,7 +65,10 @@ export default function Home() {
           />
         </div>
         <div className="flex justify-center -translate-y-14">
-          <a href="" target="_blank">
+          <a
+            href="https://ethglobal.com/showcase/clave-watch-fyqey"
+            target="_blank"
+          >
             <img
               src="eth.png"
               alt="eth"
