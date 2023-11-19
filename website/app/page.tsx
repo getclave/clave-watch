@@ -26,7 +26,6 @@ export default function Home() {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    console.log("working");
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -34,19 +33,19 @@ export default function Home() {
 
   const contents = [
     {
-      title: "Lorem Impsum",
+      title: "Account Abstraction",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "Standardizes Ethereum account functionalities for a simplified user experience.",
     },
     {
-      title: "Lorem Impsum",
+      title: "Secure Enclave",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "Advanced hardware-based security to protect sensitive data and processes.",
     },
     {
-      title: `${width}`,
+      title: `Direct Payment`,
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "Streamlined, secure transactions ensuring immediate transfer of funds.",
     },
   ];
   return (

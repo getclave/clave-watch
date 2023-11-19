@@ -10,8 +10,7 @@ const Nouns = () => {
         />
       </div>
       <div className="text-2xl text-white max-w-2xl text-center">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry.
+      Smartwatch wallets enable easy, secure, on-the-go financial management and contactless payments.
       </div>
     </div>
   );
