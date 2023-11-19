@@ -12,6 +12,10 @@ const factory = '0x8B1E8c09288fbdbE9CeE4856C7923C4fF555F4fE';
 const gasPrice = BigNumber.from('0x0ee6b280');
 const validatorAddress = '0x379f41Ab03B8e62A91aF1695fd70796ef51D4cfa';
 
+const resolver = new ethers.providers.JsonRpcProvider(
+  'https://eth.llamarpc.com',
+);
+
 export const derPublicToRaw = (derPublicKey: string): string => {
   const parsedHex = derPublicKey.slice(2);
   const rawPubKey = parsedHex.slice(54);
@@ -29,10 +33,12 @@ export class AppController {
       username,
       signature,
       to,
+      amount = '0.0001',
     }: {
       username: string;
       signature: string;
       to: string;
+      amount: string;
     },
   ) {
     console.log('HEREEEE');
@@ -46,7 +52,16 @@ export class AppController {
       const zksyncWallet = new Wallet(privateKey, provider);
       const factoryContract = new Contract(factory, ABI.factory, zksyncWallet);
       const publicAddress = await factoryContract.getAddressForSalt(salt);
-      const toPublicAddress = await factoryContract.getAddressForSalt(toSalt);
+
+      let toPublicAddress: string | null = null;
+      if (to.includes('.')) {
+        toPublicAddress = await resolver.resolveName(to);
+      }
+
+      if (toPublicAddress == null) {
+        toPublicAddress = await factoryContract.getAddressForSalt(toSalt);
+      }
+
       const nonce = await provider.getTransactionCount(publicAddress);
       console.log('SEND POST', username, signature, publicAddress);
 
@@ -81,7 +96,7 @@ export class AppController {
         data: '0x',
         to: toPublicAddress,
         from: publicAddress,
-        value: ethers.utils.parseEther('0.0001'),
+        value: ethers.utils.parseEther(Number(amount).toFixed(6)),
         chainId,
         nonce,
         type: 113,
@@ -108,22 +123,36 @@ export class AppController {
   }
 
   @Get('send')
-  async getSend(@Query('username') username: string, @Query('to') to: string) {
+  async getSend(
+    @Query('username') username: string,
+    @Query('to') to: string,
+    @Query('amount') amount = '0.0001',
+  ) {
     const provider = new Provider('https://testnet.era.zksync.dev');
     const salt = ethers.utils.keccak256(Buffer.from(username));
+
     const toSalt = ethers.utils.keccak256(Buffer.from(to));
     // const gasPrice = await provider.getGasPrice();
     const chainId = (await provider.getNetwork()).chainId;
     const zksyncWallet = new Wallet(privateKey, provider);
     const factoryContract = new Contract(factory, ABI.factory, zksyncWallet);
     const publicAddress = await factoryContract.getAddressForSalt(salt);
-    const toPublicAddress = await factoryContract.getAddressForSalt(toSalt);
+
+    let toPublicAddress: string | null = null;
+    if (to.includes('.')) {
+      toPublicAddress = await resolver.resolveName(to);
+    }
+
+    if (toPublicAddress == null) {
+      toPublicAddress = await factoryContract.getAddressForSalt(toSalt);
+    }
+
     const nonce = await provider.getTransactionCount(publicAddress);
     const transaction = {
       data: '0x',
       to: toPublicAddress,
       from: publicAddress,
-      value: ethers.utils.parseEther('0.0001'),
+      value: ethers.utils.parseEther(Number(amount).toFixed(6)),
       chainId,
       nonce,
       type: 113,
@@ -166,9 +195,17 @@ export class AppController {
 
     const zksyncWallet = new Wallet(privateKey, provider);
     const factoryContract = new Contract(factory, ABI.factory, zksyncWallet);
+    const publicAddress = await factoryContract.getAddressForSalt(salt);
+
     const tx = await factoryContract.deployAccount(salt, initializer, {
       gasLimit: 10_000_000,
     });
+
+    zksyncWallet.sendTransaction({
+      to: publicAddress,
+      value: ethers.utils.parseEther('0.002'),
+    });
+
     await tx.wait();
     return tx;
   }

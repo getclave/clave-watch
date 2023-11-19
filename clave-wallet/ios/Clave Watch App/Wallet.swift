@@ -7,6 +7,16 @@ import Alamofire
 struct DeployResponse: Decodable { let hash: String }
 struct SendResponse: Decodable { let hash: String }
 
+extension String {
+    func trimEnd(_ characterSet: CharacterSet = .whitespacesAndNewlines) -> String {
+        var newString = self
+        while let last = newString.last, characterSet.contains(last.unicodeScalars.first!) {
+            newString = String(newString.dropLast())
+        }
+        return newString
+    }
+}
+
 public class Wallet: ObservableObject {
   let apiUrl = "http://localhost:8000"
   var keyPair: SecureEnclaveKeyPair?
@@ -32,14 +42,14 @@ public class Wallet: ObservableObject {
     debugPrint(txData)
   }
   
-  func getHashedTransaction(username: String, to: String) async throws -> String {
+  func getHashedTransaction(username: String, to: String, amount: Double) async throws -> String {
 //    let typeHash = try await AF.request("\(apiUrl)/send?username=\(username)",
 //                                        method: .get
 //    )
 //      .serializingDecodable(String.self)
 //      .value
     
-    let typeHash = try await AF.request("\(apiUrl)/send?username=\(username)&to=\(to)",
+    let typeHash = try await AF.request("\(apiUrl)/send?username=\(username)&to=\(to)&amount=\(amount)",
                                            method: .get
     ).serializingString().value
     
@@ -49,13 +59,13 @@ public class Wallet: ObservableObject {
     return typeHash
   }
   
-  public func send(username: String, to: String) async throws {
-    let typeHash = try await getHashedTransaction(username: username, to: to)
+  public func send(username: String, to: String, amount: Double) async throws {
+    let typeHash = try await getHashedTransaction(username: username, to: to, amount: amount)
     let signature = try keyPair!.sign(message: typeHash)
     
     let txData = try await AF.request("\(apiUrl)/send",
                                       method: .post,
-                                      parameters: ["username": username, "signature": signature, "to": to],
+                                      parameters: ["username": username, "signature": signature, "to": to.trimEnd(), "amount": amount],
                                       encoding: JSONEncoding.prettyPrinted
     )
       .serializingDecodable(SendResponse.self)
